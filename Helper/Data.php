@@ -18,9 +18,8 @@ class Data extends AbstractHelper
 
     /**
      * @param ScopeConfigInterface $scopeConfig
-     * @param EncryptorInterface $config
      */
-    public function __construct(ScopeConfigInterface $scopeConfig, EncryptorInterface $config)
+    public function __construct(ScopeConfigInterface $scopeConfig)
     {
         $this->config = $scopeConfig;
     }

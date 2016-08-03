@@ -46,10 +46,10 @@ class SparkStrategy implements StrategyInterface
 
             $client = new Http($this->host);
             $client->setMethod(Http::POST);
-            $client->setHeaders(array(
+            $client->setHeaders([
                 'Date' => $date,
                 'Authorization' => $this->getConfig()['apiKey'],
-            ));
+            ]);
             $client->resetParameters();
             $client->setHeaders('Content-type', 'application/json');
             $client->setRawData($this->generateParams());
@@ -145,11 +145,11 @@ class SparkStrategy implements StrategyInterface
     {
         $result = [];
 
-        $contentParams = array(
+        $contentParams = [
             'from' => $this->mail->getFrom(),
             'html' => $this->extractHtml($this->mail),
             'subject' => $this->mail->getSubject()
-        );
+        ];
 
         $result['content'] = $contentParams;
 
